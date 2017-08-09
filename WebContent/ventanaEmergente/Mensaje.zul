@@ -1,0 +1,28 @@
+<?link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:400,700,300" ?>
+<?link rel="stylesheet" type="text/css" href="../css/bootstrap/css/bootstrap.css" ?>	 
+<?link rel="stylesheet" type="text/css" href="../css/bootstrap/temas/tema3.css" ?>
+
+<zk>
+	<window action="show: slideDown({duration: 300}); hide: slideUp({duration: 100})"
+	 border="none" width="260pt" closable="true" use="servicio.VentanaMensajeDlg" id="winConf">
+	 
+	 	<style src="../css/bootstrap/temas/tema3.css"/>		
+		<script src="../css/bootstrap/js/bootstrap.js" /> 
+	 	<script src="../css/bootstrap/js/botton.js" />
+	
+		<label value="${arg.title}" zclass="text-center lead"/>
+		<button id="cerrarVentana" label="X" zclass="btnSig dl pa anx" 
+				onClick="winConf.detach()" style="font-size: 10px;"/>
+		<separator bar="true" spacing="8px" />
+	 	
+		<hbox>
+			<div sclass="${arg.icon}"/>
+			<separator spacing="13px" />
+			<label value="${arg.message}" zclass="lead text-justify"/>
+		</hbox>
+		<separator spacing="15px"/>
+		<hbox id="buttons" style="margin-left:auto; margin-right:auto">
+			<custom-attributes button.sclass="dl ans"/>
+		</hbox>
+	</window>
+</zk>

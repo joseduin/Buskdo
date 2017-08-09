@@ -1,0 +1,15 @@
+<div zclass="cabecera" apply="controlador.ControladorCabecera">
+    <div align="center">
+        <image id="imglogo" src="/imagen/logo.png" zclass="imglogo"/>
+        
+       	<vbox if="${sessionScope.estatus eq 'ACTIVO'}">
+       		<hbox zclass="txt">
+          		<label value="Bienvenido" zclass="presentacion e6"/>
+          		<label value="${sessionScope.nick}" zclass="naranja presentacion" style="text-transform: capitalize"/>
+          	</hbox>
+          	<button id="btnSalir" label="Cerrar Sesión" zclass="salir dl pa ant"/>
+        </vbox>
+    </div>
+    <label value="${execution.desktop.requestPath}" id="carpetaActualC" visible="false"/>
+</div>
+

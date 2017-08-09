@@ -1,0 +1,63 @@
+<?page title="Dashboard"?>
+<?init class="controlador.AutentificarUsuario" name="administrador" ?>
+<?link rel="icon" type="image/x-icon" href="/imagen/icono.png"?>
+
+<?link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:400,700,300" ?>
+<?link rel="stylesheet" type="text/css" href="../css/bootstrap/css/bootstrap.css" ?>
+<?link rel="stylesheet" type="text/css" href="../css/style.css" ?>
+<?link rel="stylesheet" type="text/css" href="../css/window.css" ?>
+
+<zk>
+	<script src="../css/bootstrap/js/bootstrap.js" /> 
+	<script src="../css/bootstrap/js/botton.js" />
+	<style src="../css/bootstrap/temas/tema3.css"/> 
+
+	<style>
+		.z-listheader-button {
+			width:0;
+			height:32px;
+			color: transparent;
+			display:none;
+			border-left:0 solid #abd8f9;
+			line-height:32px;
+			text-align:center;
+			position:absolute;
+			top:0;right:0;
+			text-decoration:none;
+			cursor:pointer;
+			z-index:15;	 
+			box-shadow:	inset 1px 0 #FFFFFF;
+			-webkit-box-shadow:	 inset 1px 0 #FFFFFF;}
+		.z-listitem .z-listcell {
+			border-left:0 solid transparent;	/*separacion de columnas*/
+			border-right:0 solid transparent;	/*separacion de columnas*/
+			overflow:hidden;
+			cursor: pointer}
+		.z-listitem:hover > .z-listcell {	
+			background:	transparent; /*hover en las filas*/
+			background-clip:padding-box;
+			position:relative}	
+	</style>	
+ 	<include src="../vista/cabecera.zul"/>
+ 				<!-- Cabecera -->
+
+	<div zclass="contenedor" apply="controlador.ControladorAdministrador">
+		<div zclass="row ">
+			<div zclass="col-sm-3" style="padding-right: 0px">
+			<navbar orient="vertical">
+				<nav label="Convertidor de Monedas" image="/imagen/convertidor.png">
+					<navitem id="bolivarDolar" label="Bolivar - Dolar"/>
+					<navitem id="dolarOtras" label="Dolar - Otras"/>
+				</nav>
+				<navitem id="admUsuarios" label="Usuarios" image="/imagen/adminUsuario.png"/>
+				<navitem id="portales" label="Portales" image="/imagen/portal.png"/>
+				<navitem id="vistaUsuario" label="Vista Usuario" image="/imagen/vistaUsuario.png"/>
+			</navbar>
+			</div>
+			<div zclass="col-sm-9" style="padding: 0px">
+				<include id="urls"/>
+			</div>
+		</div>	
+	</div>
+	<include src="../vista/pie_pagina.zul"/>			<!-- Pie de Pagina -->
+</zk>

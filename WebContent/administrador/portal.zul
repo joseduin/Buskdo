@@ -1,0 +1,89 @@
+<zk xmlns:x="xhtml">
+	<div align="center" apply="controlador.ControladorPortales">
+		<separator spacing="10px"/>
+		 <label value="Configuracion de Portales" zclass="tituloAdmin lead"/>
+		 <separator spacing="20px"/>
+		
+	<!-- LISTA -->
+		<div id="contieneLista" align="center">
+			<listbox id="listaPortales" width="90%">
+				<listhead menupopup="auto">
+					<listheader label="Dominio" align="center"/>
+					<listheader label="Codigo Portal" align="center"/>
+					<listheader label="Direccion Portal" align="center"/>
+					<listheader label="Pais" align="center"/>
+					<listheader label="Estatus" align="center" width="10%"/>
+				</listhead>
+				<template name="model">
+					<listitem>
+						<listcell><textbox value="${each.dominio}" maxlength="50"/></listcell>
+						<listcell><textbox value="${each.cod_portal}" maxlength="50"/></listcell>
+						<listcell><textbox value="${each.portal}" maxlength="3"/></listcell>
+						<listcell><textbox value="${each.pais}" maxlength="50"/></listcell>
+						<listcell> <checkbox checked="${each.estatus}"/></listcell>
+					</listitem>	
+				</template>
+			</listbox>
+			<separator spacing="10px"/>
+			<hbox>
+				<button label="Guardar" id="guardarPortal" zclass="btn btn-success ao"/>
+				<button label="Registrar Portal" id="registrarPortal" zclass="btn btn-info ao"/>
+				<button label="Cancelar" id="calcelarPortal" zclass="btn btn-danger ao"/>
+			</hbox>
+		</div>
+		<separator spacing="20px"/>
+		
+	<!-- REGISTRAR PORTAL -->
+		<div id="contieneRegistrar" align="center" visible="false">
+			<x:table>
+				<x:tr>
+					<x:td>
+						<label value="Codigo Portal:" zclass="letrasAdmin"/>
+					</x:td>
+					<x:td>	
+						<textbox id="cod_portal"  placeholder="Codigo" maxlength="3" zclass="txtAdmin"/>
+					</x:td>
+				</x:tr>
+				<x:tr>
+					<x:td>	
+						<label value="Direccion Portal:" zclass="letrasAdmin"/>
+					</x:td>
+					<x:td>
+						<textbox id="portal" placeholder="URL" maxlength="50" zclass="txtAdmin"/>
+					</x:td>
+				</x:tr>
+				<x:tr>
+					<x:td>	
+						<label value="Pais:" zclass="letrasAdmin"/>
+					</x:td>
+					<x:td>
+						<textbox id="pais" placeholder="Pais" maxlength="50" zclass="txtAdmin"/>
+					</x:td>
+				</x:tr>
+				<x:tr>
+					<x:td>	
+						<label value="Dominio:" zclass="letrasAdmin"/>
+					</x:td>
+					<x:td>
+						<textbox id="dominio" placeholder="Dominio" maxlength="50" zclass="txtAdmin"/>
+					</x:td>
+				</x:tr>
+				<x:tr>
+					<x:td>
+						<label value="Estatus:" zclass="letrasAdmin"/>
+					</x:td>
+					<x:td>
+						<checkbox id="estatus" width="200px"/>
+					</x:td>
+				</x:tr>
+			</x:table>
+			<x:br></x:br>
+			
+			<hbox>
+				<button label="Guardar" id="guardarRegistro" zclass="btn btn-success ao"/>
+				<button label="Cancelar" id="cancelarRegistro" zclass="btn btn-danger ao"/>
+			</hbox>
+		</div>
+	</div>
+	<separator spacing="20px"/>
+</zk>

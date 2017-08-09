@@ -1,0 +1,72 @@
+<zk xmlns:x="xhtml">
+	<div align="center" apply="controlador.ControladorAdministracionUsuarios">
+		<separator spacing="10px"/>
+		<label value="Administracion de Usuarios" zclass="tituloAdmin lead"/>
+		<separator spacing="20px"/>
+		
+	<!-- LISTA -->
+		<div id="listaUsuario" align="center">
+			<listbox id="listaUsuarios" mold="paging" pageSize="10" pagingPosition="top" width="90%">
+				<listhead menupopup="auto">
+					<listheader label="Nick Name" align="center"/>
+					<listheader label="Credenciales" align="center"/>
+					<listheader sort="auto(estatus)" label="Estatus" align="center"/>
+				</listhead>
+				<template name="model">
+					<listitem>
+						<listcell><label value="${each.nick}" style="text-transform: capitalize"/></listcell>
+						<listcell><label value="${each.credenciales}"/></listcell>
+						<listcell style="cursor: pointer;"
+								  zclass="${each.estatus eq 'ACTIVO'    ? 'alert-success' :
+											each.estatus eq 'BLOQUEADO' ? 'alert-danger'  :
+											each.estatus eq 'PENDIENTE' ? 'alert-warning' : 'alert-info'}">
+							<label value="${each.estatus}"/>
+						</listcell>
+					</listitem>	
+					</template>
+				</listbox>
+				<separator spacing="10px"/>
+			<hbox>
+				<button label="Modificar" id="modificarUsuario" zclass="btn btn-info ao"/>
+			</hbox>
+		</div>
+		
+	<!-- EDITAR USUARIO -->
+		<div id="modificar" align="center" visible="false">
+		
+			<x:table>
+				<x:tr>
+					<x:td>
+						<label value="Nick Name:" zclass="letrasAdmin"/>					
+					</x:td>
+					<x:td>
+						<label id="txtNick" zclass="letrasAdmin" style="color:orange; text-transform: capitalize;"/>
+					</x:td>
+				</x:tr>
+				<x:tr>
+					<x:td>	
+						<label value="Credenciales:" zclass="letrasAdmin"/>
+					</x:td>
+					<x:td>
+						<combobox id="comboCredenciales" width="200px" height="34px" readonly="true"/>
+					</x:td>
+				</x:tr>
+				<x:tr>
+					<x:td>
+						<label value="Estatus:" zclass="letrasAdmin"/>
+					</x:td>
+					<x:td>
+						<combobox id="comboEstatus" width="200px" readonly="true"/>
+					</x:td>
+				</x:tr>
+			</x:table>	
+			<x:br></x:br>
+
+			<hbox>
+				<button label="Guardar" id="guardarUsuario" zclass="btn btn-success ao"/>
+				<button label="Cancelar" id="cancelarUsuario" zclass="btn btn-danger ao"/>
+			</hbox>
+		</div>
+	</div>
+	<separator spacing="20px"/>
+</zk>

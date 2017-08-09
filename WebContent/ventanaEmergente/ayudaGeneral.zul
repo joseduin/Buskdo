@@ -1,0 +1,38 @@
+<?xel-method prefix="b" name="botonera" class="controlador.ControladorAyudaGeneral"
+ 		     signature="java.lang.String botonera(int)"?>
+<zk>
+	<div apply="controlador.ControladorAyudaGeneral">	
+	
+	<cardlayout id="card" width="550px" height="400px">
+	
+<!-- PAGINA 1 -->
+    	<div align="center" zclass="divCard">
+    		<html content="${v.ayudaGeneral}" zclass="ayudaLetras"/>
+    	</div>
+    	
+<!-- PAGINA 2 -->
+    	<image src="/imagen/img.png" zclass="cimg1"/>
+    	
+<!-- PAGINA 3 -->
+    	<vbox align="center">			
+    		<label value="Datos Productos → Colsultar Productos" zclass="ayudaVinheta"/>
+    		<image src="/imagen/img1.png" zclass="cimg2"/>
+    	</vbox>
+
+<!-- PAGINA 4 -->
+    	<image src="/imagen/img2.png" zclass="cimg1"/>
+    	
+<!-- PAGINA 5 -->
+    	<image src="/imagen/img3.png" zclass="cimg1"/>
+    	
+	</cardlayout>
+
+<!-- BOTONERA -->
+	<div id="botonera" zclass="bononera">
+    	<button id="${forEachStatus.index}" forEach="${b:botonera(card.getChildren().size())}" zclass="${each}" style="padding: 0;"/>
+    </div> 
+    	
+	<button id="btnAnterior" label="«" zclass="dl pa anu"/>
+	<button id="btnSiguiente" label="»" zclass="btnSig dl pa anu"/>
+</div>
+</zk>

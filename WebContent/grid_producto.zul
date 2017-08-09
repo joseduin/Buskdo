@@ -1,0 +1,147 @@
+<?page title="Consigue tus Productos"?>
+<?init class="controlador.AutentificarUsuario" name="usuario"?>
+<?link rel="icon" type="image/x-icon" href="/imagen/icono.png"?>
+<?xel-method prefix="c" name="decimal" class="controlador.ControladorDatosVistas"
+  			 signature="java.lang.String decimal(double)"?>
+  			 
+<?link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:400,700,300" ?>
+<?link rel="stylesheet" type="text/css" href="/css/bootstrap/css/bootstrap.css" ?>	 
+<?link rel="stylesheet" type="text/css" href="/css/style.css" ?>
+<?link rel="stylesheet" type="text/css" href="/css/window.css" ?>
+
+<zk>
+		
+<script src="/css/bootstrap/js/bootstrap.js" /> 
+<script src="/css/bootstrap/js/botton.js" />
+<style src="/css/bootstrap/temas/tema3.css"/>
+
+<style>
+.z-listheader-button{
+	color: transparent;
+	display:none;
+	width:0;
+	height:32px;
+	border-left:0 solid #abd8f9;
+	line-height:32px;
+	text-align:center;
+	position:absolute;
+	top:0;right:0;
+	text-decoration:none;
+	cursor:pointer;
+	z-index:15;	 
+	-webkit-box-shadow:	 inset 1px 0 #FFFFFF;
+	box-shadow:	inset 1px 0 #FFFFFF;}
+.z-listitem .z-listcell{
+	border-left:0 solid transparent;	/*separacion de columnas*/
+	border-right:0 solid transparent;	/*separacion de columnas*/
+	overflow:hidden;
+	cursor: pointer}
+.z-listitem:hover>.z-listcell{	
+	background:	transparent; /*hover en las filas*/
+	background-clip:padding-box;
+	position:relative}	
+</style>
+
+<include src="/vista/cabecera.zul"/>			<!-- Cabecera -->
+<div id="contenido" apply="controlador.ControladorGridProductos" zclass="productos">
+<custom-attributes composerName="v"/>
+
+							<!-- BUSQUEDA -->
+	<hbox apply="controlador.ControladorDatosVistas" align="center" zclass="filtro">
+		<label value="Portal" zclass="letras"/>
+		<combobox id="portalbox" width="200px" style="margin-right: 10px" readonly="true">
+			<template name="model">
+            	<comboitem label="${each}" image="${$composer.getIcono(each)}" />
+        	</template>
+        </combobox>
+		<label value="Busqueda" zclass="letras"/>
+		<div class="input-group">
+			<combobox id="historial" autodrop="true" buttonVisible="false" width="200px"/>
+			<button id="btnBusqueda" image="${$composer.btnLupa}" zclass="lupa" style="border-top-width: 0px;"/>
+		</div>
+		<div zclass="e1">  
+			<button id="btnLista" image="${$composer.btnLista}" zclass="btnGaleLista" visible="false"/>
+       		<button id="btnGaleria" image="${$composer.btnGaleria}" zclass="btnGaleLista"/>
+		</div> 
+	</hbox>
+	
+							<!-- FILTROS -->
+	<vbox id="filtro" zclass="color_filtro" visible="false" spacing="0.1"> 
+		<div zclass="e_f">
+			<label value="Orden" zclass="presentacion" style="text-transform: capitalize"/>
+			<combobox id="comboOrden" width="125px" readonly="true"/>
+			
+			<label value="Categoria" zclass="presentacion" style="text-transform: capitalize"/>
+			<combobox id="comboCategoria" width="125px" readonly="true"/>
+			<hbox id="hboxCategoria" visible="false">
+				<label value="X" id="cerrarCategoria" zclass="dl pc ans"/>
+				<label id="categoria"/>
+			</hbox>
+			
+			<label value="Ubicacion" zclass="presentacion" style="text-transform: capitalize"/>
+			<combobox id="comboUbicacion" width="125px" readonly="true"/>
+			<hbox id="hboxUbicacion" visible="false">
+				<label value="X" id="cerrarUbicacion" zclass="dl pc ans"/>
+				<label id="ubicacion"/>
+			</hbox>
+			
+			<label value="Precio" zclass="presentacion" style="text-transform: capitalize"/>
+			<hbox id="hboxPrecio1">
+				<doublebox id="min" placeholder="Min" width="40px" constraint="no negative"/>-
+				<doublebox id="max" placeholder="Max" width="40px" constraint="no negative"/>
+				<button id="btnIr" label="Ir" zclass="dl pa ans" style="font-size: 10px;"/>
+			</hbox>
+			<hbox id="hboxPrecio" visible="false">
+				<label value="X" id="cerrarPrecio" zclass="dl pc ans"/>
+				<label id="precio"/>
+			</hbox>
+		</div>
+	</vbox>
+	
+		   	 			<!-- LISTA DE PRODUCTOS -->
+	<hlayout id="contenedor" style="position: relative;bottom: 204px;left: 138px;">
+		<listbox id="datosProductos" mold="paging" pageSize="3"  pagingPosition="top" width="540px">
+			<listhead menupopup="auto">
+				<listheader label="Imagen" align="center" width="30%"/>
+				<listheader sort="auto(nombre)" width="150px" label="Descripción" />
+				<listheader sort="auto(precio)" label="Precio" align="center"/>
+			</listhead>
+			<template name="model">
+				<listitem>
+					<listcell>
+						<image src="${each.condicion != 'new' ? '' : 'imagen/nuevo.png'}" zclass="listaNuevo"/>
+						<image src="${each.imagen}" zclass="imagenLista" /> 
+					</listcell>
+					<listcell><label value="${each.nombre}"/></listcell>
+					<listcell><label value="${each.precio == 0 ? '' : each.moneda}"  zclass="moneda"/>
+							  <label value="${each.precio == 0 ? 'Precio a convenir' : c:decimal(each.precio)}"/></listcell>			
+				</listitem>	
+			</template>
+		</listbox>
+							<!-- GALERIA -->
+		<div id="productosImagen"  width="520px" visible="false" zclass="e2">
+		<div zclass="limpiar"/>
+   		</div>
+   		<button id="siguienteGaleria" label="»" visible="false" zclass="siguiente btnGaleria dl pa anu"/>
+   		<button id="anteriorGaleria" label="«" zclass="anterior btnGaleria dl pa anu"/>
+   		
+   							<!-- ANALISIS DE PRECIO -->
+		<hbox visible="false" id="analisis" zclass="analisis">
+			<image id="imgImagenPrevia" zclass="imgImagenPrevia"/>
+			<div>
+				<html id="DescAnalisis" zclass="letraAnalisis"/>
+					
+				<separator bar="true" spacing="10px" width="100%"/>
+				<html id="DescPrecio" zclass="letraAnalisis"/>
+				<html id="DescConver" zclass="letraAnalisis" visible="false"/>
+			</div>	
+		</hbox>		
+		
+	</hlayout>	
+	
+<div zclass="limpiar"/>
+<label value="${desktop.execution.desktop.queryString}" id="code" visible="false"/>
+</div>
+<include src="/vista/pie_pagina.zul"/>			<!-- Pie de Pagina -->
+
+</zk>

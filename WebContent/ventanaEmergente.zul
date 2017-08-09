@@ -1,0 +1,33 @@
+<!-- VENTANA PLANTILLA PARA LAS VISTAS:
+	 								acercaDe.zul
+	 								ayudaGeneral.zul
+	 								datosPersonales.zul
+	 	
+	 SE CARGAN DESDE controlador.ControladorMenu.java -->
+	 
+<?link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:400,700,300" ?>
+<?link rel="stylesheet" type="text/css" href="/css/bootstrap/css/bootstrap.css" ?>	 
+<?link rel="stylesheet" type="text/css" href="/css/bootstrap/temas/tema3.css" ?>
+<?link rel="stylesheet" type="text/css" href="/css/style.css" ?>
+<?link rel="stylesheet" type="text/css" href="/css/window.css" ?>
+<?link rel="stylesheet" type="text/css" href="/css/listbox.css" ?>
+
+<zk>
+<window apply="controlador.ControladorDatosVistas" border="none" 
+		width="${arg.ancho}" id="windo" action="${arg.efecto}" closable="false"> 
+	
+	<!-- <caption src="${arg.icono}" />  -->
+	<custom-attributes composerName="v"/>
+
+	<style src="/css/bootstrap/temas/tema3.css"/>		
+	<script src="/css/bootstrap/js/bootstrap.js" /> 
+ 	<script src="/css/bootstrap/js/botton.js" />
+
+	<label value="${arg.titulo}" zclass="text-center lead"/>
+	<button id="cerrarVentana" label="X" zclass="btnSig dl pa anx" style="font-size: 10px;"/>
+	<separator bar="true" spacing="8px" />
+ 
+	<include src="${arg.url}"/>
+
+</window>
+</zk>

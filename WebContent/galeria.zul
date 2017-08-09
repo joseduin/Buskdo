@@ -1,0 +1,16 @@
+<?xel-method prefix="c" name="decimal" class="controlador.ControladorDatosVistas"
+   signature="java.lang.String decimal(double)"?>
+<zk>
+	<div id="${arg.id}" zclass="anima galeria" align="center">
+    	<vlayout spacing="0">
+        	<image src="${arg.imagen}" zclass="anima galeriaImagen"/>
+        	<image src="${arg.condicion != 'new' ? '' : 'imagen/nuevo.png'}" zclass="galeriaNuevo"/>  
+        	<hbox zclass="galeriaAnalisis">
+        		<label value="${arg.moneda}" zclass="galeriaDolar moneda"/>
+        		<label value="${c:decimal(arg.precio)}" zclass="galeriaDolar"/> 
+        	</hbox>
+        	<label value="${arg.nombre}" zclass="anima galeriaNombre"/>
+    	</vlayout>
+	</div>
+</zk>
+

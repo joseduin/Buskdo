@@ -1,0 +1,744 @@
+	html, body {
+		padding: 0;
+		margin: 0;
+		background: white;
+		bottom: 0px;
+		font-family: 'Roboto', sans-serif;
+	} 
+	.contenedor {
+		width: 100%;
+		min-width: 480px;
+		min-height: 76%;
+	}
+	.productos {
+		width: 100%;
+		min-width: 480px;
+		min-height: 76%;
+		margin:5px 0 0 10px;
+		padding-bottom: 40px;	
+	}
+								/*- Administrador-*/
+	.letrasAdmin {
+		font-weight: bold;
+	}
+	.tituloAdmin {
+		font-weight: bold;
+		color: #2980B9;
+	}
+	.txtAdmin {
+		height: 40px;
+		font-size: 16px;
+		border: none;
+		border-bottom: 2px solid black;
+	}
+								/*- Menu Banner Oferta-*/
+	.ImagenOferta {
+		width:100%; 
+		height:100%; 
+		margin: 10px 0 30px 10px;
+	}
+									/*- ayudaGeneral -*/
+	.ayudaLetras {
+		margin-left: 20px;
+		font-weight: lighter;
+	}
+	.ayudaLetrasTitulo {
+		margin-left: 160px;
+		font-weight: bold;
+	}
+	.ayudaVinheta {
+		font-weight: bold;
+	}
+	.btnSig {
+		float:right;
+	}
+	.divCard {
+		margin: 20px;
+	}
+	.btnCircular {
+		width: 10px;
+		height: 10px;
+		border: none;
+		border-radius: 100%;
+		margin-right: 1px; 
+	}
+	.btnCircular:hover {
+		background-color: #2ECC71
+	}
+	.btnCircular:active {
+		background-color: #16A085;
+	}
+	.bononera {
+		position: absolute;
+		left: 240px;
+		bottom: 20px;	
+	}
+										/*--- Login ---*/
+	.caja {
+		padding: 20px 10px;
+	}
+	.cartel {
+		width:100px;
+		position: relative;
+		top: 45px; 
+		left: 27%;
+		padding: 10px 20px;
+		text-align: center;
+	}
+	.e3 {
+		top: 40px; 
+		left: 23%;
+	}
+	.cartel-letra {
+		font-weight: bold;
+		font-size: 125%;
+	}
+	.grupo_textboxt div {
+		background-color: #fff;
+		cursor: pointer;
+		padding: 5px 5px;
+		border: 2px solid #fff;
+		position: relative;
+		top: 4px;
+	}
+	.txtlogin {
+		width: 200px;
+		height: 40px;
+		positon: relative;
+		margin-top: 7px;
+		font-size: 16px;
+		color: #444;
+		border: 2px solid transparent;
+		padding-left: 20px;
+	}
+	.txtlogin:hover {
+		border: 2px solid #1ABC9C;
+	}
+	.txtlogin:active {
+		border: 2px solid #3498DB;
+	}
+	.grupo_textboxt:hover .txtlogin {
+		border: 2px solid #1ABC9C;
+		border-left: 2px solid transparent;
+	}
+	.grupo_textboxt:hover div {
+		border: 2px solid #1ABC9C;
+		border-right: 2px solid transparent;
+		background-color: #ECF0F1;
+	}
+	.grupo_textboxt:active .txtlogin {
+		border: 2px solid #3498DB;
+		border-left: 2px solid transparent;
+	}
+	.grupo_textboxt:active div {
+		border: 2px solid #3498DB;
+		border-right: 2px solid transparent;
+		background-color: #ECF0F1;
+	}
+	.btnlogin {
+		width: 100%;
+		height: 50px;
+		font-size: 28px;
+		font-weight: bold;
+		border: 0;
+		cursor: pointer;
+	}
+	.btnlogin:hover {
+		color: #F2F4F5;
+	}
+	.btn1:hover {
+		background-color: #D04436;
+		color: #fff;
+	}
+	.btn1:active {
+		background-color: #B93D30;
+	}
+	.btn2:hover {
+		background-color: #2573A6;
+		color: #fff;
+	}
+	.btn2:active {
+		background-color: #216694;
+	}
+	.btn3:hover {
+		background-color: #17A98C;
+		color: #fff;
+	}
+	.btn3:active {
+		background-color: #16A085;
+	}
+	.hexagono {
+		width: 200px;
+		height: 80px;
+		position: relative;
+		margin: 50px 0 50px 0;
+		left: 0%;
+		font-size: 25px;
+	}
+	.hexagono:before {
+		content: "";
+		position: absolute;
+		top: -40px;
+		left: 0;
+		width: 0;
+		height: 0;
+		border-left: 100px solid transparent;
+		border-right: 100px solid transparent;
+		border-bottom: 40px solid #5bc0de;
+		transition: 1s;
+	}
+	.hexagono:after {
+		content: "";
+		position: absolute;
+		bottom: -40px;
+		left: 0;
+		width: 0;
+		height: 0;
+		border-left: 100px solid transparent;
+		border-right: 100px solid transparent;
+		border-top: 40px solid #5bc0de;
+		transition: 1s;
+	}
+	.hexagono:hover {
+		background-color: #31b0d5;
+	}
+	.hexagono:hover:after {
+		border-top: 40px solid #31b0d5;
+	}
+	.hexagono:hover:before {
+		border-bottom: 40px solid #31b0d5;
+	}
+
+										/*--- Pie de Pagina ---*/
+	.piedepagina {
+	 	min-width: 480px;
+		background: #3e4147;
+	    padding: 15px 0;
+	}
+										/*---Cabecera ---*/
+	.imglogo {
+		width: 60%;
+		height: 120px;
+		cursor: pointer;
+	}									
+	.cabecera {
+	 	width: 100%;
+	 	min-width: 480px;
+	    background-color: #ECF0F1;
+	    color: #6D1C2D;
+	    padding: 18px;
+	 }	
+	.txt {
+		position: absolute;
+		right: 1%;
+    	top: 130px; 
+	}
+	.presentacion {
+		font-weight: bold;
+		font-size: 110%;
+	}
+	.salir {
+		position: absolute;
+		right: 1%;
+		top: 5px;
+	}
+
+										/*--- Lista Producto ---*/
+	.orden {
+		cursor: pointer;
+	}
+	.analisis {
+		width: 530px;
+		height:220px;
+	  	position: absolute;
+	  	top: 0;
+  		left: 10px;
+		background: transparent;
+		background-image: url('../imagen/fondo2.png');
+		background-repeat: no-repeat;
+		background-position: bottom;
+		border:1px solid #E7E7E7; 
+	}
+	.imagenLista {
+		width:140px;
+		height:140px;
+	}
+	.listaNuevo {
+		position:absolute;
+		width:50px;
+		height:50px;
+	}
+									/*- filtro -*/
+	.letras {
+		margin: 7px 7px 0 7px;
+		color: black;
+		font-size: 18px;
+		font-weight: bold;	
+	}
+	.filtro {
+		min-width: 677px;
+		height: 50px;
+		background-color: #48ccc6;
+		padding: 0 5px 0 8px ;
+		margin: 0 0 5px 0;
+	}
+	.btnGaleLista {
+		width:40px;
+		height:30px;
+		background: #FFFFFF;
+		border: none;
+		cursor: pointer;
+		margin-right: 7px;
+	}
+	.lupa {
+		height: 22px;
+		background-color: white;
+		border: 2px solid transparent;
+		border-left: 2px solid transparent;
+		margin-right: 10px;
+		position: relative;
+		right: 6px;
+		bottom: 0;
+		cursor: pointer;
+	}
+	.anima {
+		transition: 1s;
+	}
+	.btnlista {
+		position: absolute;
+		left: 92%;
+		top: 2px;
+	}
+	.imgImagenPrevia {
+		width:200px;
+		height:100%;
+		margin-right:3px;
+		margin-top:0;
+	}
+	
+	.letraAnalisis{
+		color: black;
+		font-size: 13px;
+		font-weight: bold;
+	}
+	.s {
+		text-decoration: underline;
+	}
+	.x {
+		padding: 0 5px; 
+		background-color: white;
+		font-weight: bold;
+		cursor: pointer;
+	}
+	.x:hover {
+		background-color: #ECF0F1;
+	}
+	.galeria {
+		width:222px;
+		height:250px;
+		position: relative;
+		float: left;
+		display: block;
+		padding : 10px 10px 0 10px;           
+	  	zoom : 1;
+	    margin: 0;
+	    border:1px solid transparent;
+	}
+	.galeria:hover {
+	    border: 1px solid #95A5A6;
+	    overflow: hidden;
+	    min-height: 80px;
+	}
+	.galeriaNombre {
+		color: #000099;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+	}
+	.galeria:hover .galeriaNombre {
+		color: black;
+		
+		text-overflow: initial;
+		white-space: normal;
+	}
+	.galeriaAnalisis {
+		padding: 2px 5px;
+	}
+	.galeriaImagen {
+		width:150px;
+		height:150px; 
+	}
+	.galeria:hover .galeriaImagen {
+		width:110px;
+		height:110px; 
+	}
+	.galeriaDolar {
+		font-size: 18px;
+		font-weight: bold;
+	}
+	.galeriaNuevo {
+		width:50px;
+		height:50px;
+		position:absolute;
+		bottom:-10px;
+		right:0;
+	}
+	.btnGaleria {
+		width:30px;
+		height:50px;
+		position: absolute;
+		top: 140px;					/*180*/
+		background-color: #ECF0F1;
+		border: none;
+		font-weight: bold; 
+	}
+	.btnGaleria:hover {
+		background-color: #C0392B;
+		color: white;
+	}
+	.siguiente {
+		left: -81px;
+	}
+	.anterior {
+		left: -560px;
+	}
+						/*- Acerca de... -*/
+	.integrantes {
+		font-weight: bold;
+	}
+						/*- datos Personales -*/
+	.btnDato {
+		width: 70;
+		height: 30px;
+		font-size: 13px;
+		font-weight: bold;
+		border: 0;
+		cursor: pointer;
+	}
+
+						/*- Algun tipo de espacio sin importancia organizar -*/
+	.e {
+		margin-left:8px;
+	}
+	.e1 {
+		padding-right: 8px;
+	}
+	/* #productosImagen = e2 ?*/
+	.e2 {
+		margin-left:40px;
+	}
+	.e4 {
+		margin-right:20px;
+	}
+	.e5 {
+		padding-bottom:10px;
+	}
+	.e6 {
+		margin-right:4px;
+	}
+							/*- Imagenes CardLayaut -*/
+	.cimg1 {
+		width:100%; 
+		height:360px;
+	}
+	.cimg2 {
+		width:510px; 
+		height:340px;
+	}
+						
+						/*--- Pantalla peque�a tipo Eclipse [Responsive] ---*/
+@media (max-width: 1200px) {
+									/*--- Lista Producto ---*/
+	.btnlista {
+		left: 89%;
+	}
+	.imagenLista {
+		width:95px;
+		height:95px;
+	}
+	.listaNuevo {
+		width:35px;
+		height:35px;
+	}
+		/*- Menu Banner Oferta-*/
+	.ImagenOferta {
+		margin: 10px 0 30px 0;
+	}
+}
+@media (max-width: 1100px) {
+									/*--- Lista Producto ---*/
+	.analisis {
+		width: 430px;
+	}
+}
+@media (max-width: 1000px) {
+										/*--- Lista Producto ---*/
+	.btnlista {
+		left: 87%;
+	}
+	.analisis {
+		width: 543px;
+		position: relative;
+	  	top: 340px;
+  		left: -552px;
+		margin-bottom: 315px; 
+	}	
+	.precioColumna {
+		width:80px;
+	}
+	.imagenLista {
+		width:70px;
+		height:70px;
+	}
+	.listaNuevo {
+		width:25px;
+		height:25px;
+	}
+	.galeria {
+		width:160px;
+		height:150px;
+		padding : 0 10px 0 10px;           
+	    margin-right: 40px;
+	}
+	.galeria:hover {
+	    
+	    overflow: hidden;
+	}
+	
+	.galeriaNombre {
+		font-size: 12px;
+	}
+	.galeriaImagen {
+		width: 100px;
+		height: 100px; 
+	}
+	.galeria:hover .galeriaImagen {
+		width: 60px;
+		height: 60px;
+	}
+	.galeriaDolar {
+		font-size: 13px;
+	}
+	.galeriaNuevo {
+		width:35px;
+		height:40px;
+		bottom:-5px;
+		right:0;
+	}
+	.btnGaleria {
+		top: 80px;
+	}
+	.siguiente {
+		left: -165px;
+	}	
+									/*- filtro -*/
+	.margen2 {
+		padding-right: 312px;
+	}
+}
+@media (max-width: 600px) {
+	.filtro {
+		padding: 0 5px 0 5px ;
+	}
+	.productos {
+		margin:5px 0 0 5px;
+	}
+	.letras {
+		margin: 7px 4px 0 4px;
+		font-size: 14px;
+	}
+	.txt-filtro {
+		width:110px;
+	}
+}
+@media (max-width: 480px) {
+	.productos {
+		margin:5px 0 0 2px;
+	}
+	.letras {
+		font-size: 13px;
+	}
+}
+
+
+
+										/*-- Colors Flat --*/
+	.turquesa {
+		color:#1ABC9C;
+	}
+	.verde-oseano {
+		color: #16A085;
+	}
+	.esmeralda {
+		color: #2ECC71;
+	}
+	.nefritis {
+		color: #27AE60;
+	}
+	.rio {
+		color: #3498DB;
+	}
+	.belice {
+		color: #2980B9;
+	}
+	.amatista {
+		color: #9B59B6;
+	}
+	.wisteria {
+		color: #9B59B6;
+	}
+	.asbalto-oscuro {
+		color: #34495E;
+	}
+	.azul-medianoche {
+		color: #2C3E50;
+	}
+	.sol-flores {
+		color: #F1C40F; 
+	}
+	.naranja {
+		color: #F39C12;
+	}
+	.zanahoria {
+		color: #E67E22;
+	}
+	.calabaza {
+		color: #D35400;
+	}
+	.alizarin {
+		color: #E74C3C;
+	}
+	.granada {
+		color: #C0392B;
+	}
+	.nube {
+		color: #ECF0F1;
+	}
+	.plata {
+		color: #BDC3C7;
+	}
+	.concreto {
+		color: #95A5A6;
+	}
+	.asbesto {
+		color: #7F8C8D;
+	}
+	.fondo-turquesa {
+		background-color:#1ABC9C;
+	}
+	.fondo-verde oseano {
+		background-color: #16A085;
+	}
+	.fondo-esmeralda {
+		background-color: #2ECC71;
+	}
+	.fondo-nefritis {
+		background-color: #27AE60;
+	}
+	.fondo-rio {
+		background-color: #3498DB;
+	}
+	.fondo-belice {
+		background-color: #2980B9;
+	}
+	.fondo-amatista {
+		background-color: #9B59B6;
+	}
+	.fondo-wisteria {
+		background-color: #9B59B6;
+	}
+	.fondo-asbalto-oscuro {
+		background-color: #34495E;
+	}
+	.fondo-azul-medianoche {
+		background-color: #2C3E50;
+	}
+	.fondo-sol-flores {
+		background-color: #F1C40F;
+	}
+	.fondo-naranja {
+		background-color: #F39C12;
+	}
+	.fondo-zanahoria {
+		background-color: #E67E22;
+	}
+	.fondo-calabaza {
+		background-color: #D35400;
+	}
+	.fondo-alizarin {
+		background-color: #E74C3C;
+	}
+	.fondo-granada {
+		background-color: #C0392B;
+	}
+	.fondo-nube {
+		background-color: #ECF0F1;
+	}
+	.fondo-plata {
+		background-color: #BDC3C7;
+	}
+	.fondo-concreto {
+		background-color: #95A5A6;
+	}
+	.fondo-asbesto {
+		background-color: #7F8C8D;
+	}
+	.color_filtro {
+		width: 135px;
+		position: relative;
+    	left: 0;
+    	bottom: 5px;
+		background-color: #48ccc6; 
+	}
+	.e_f {
+		margin-left: 5px;
+		padding-bottom: 10px;
+	}
+	.limpiar {			/* para las cosas que flotan */
+		clear:both;
+	}	
+	.moneda {
+		color: #2f6b30;
+	}
+	
+	/* CheckBox */
+	.z-checkbox:first-of-type {
+		  width: 5.5rem;
+		  height: 2.5rem;
+		  position: relative;
+	}
+	 .z-checkbox:first-of-type input {
+		width: 45px;
+	  	opacity: 0;
+	}
+	 .z-checkbox:first-of-type label {
+		  position: absolute;
+		  background-color: #e9513a;
+		  width: 45px;
+		  height: 16px;
+		  top: 0;
+		  left: 0;
+		  border-radius: 3.125rem;
+		  -webkit-transition: background-color .2s ease-in-out;
+		  transition: background-color .2s ease-in-out;
+	}
+	.z-checkbox:first-of-type label:after {
+		  content: "";
+		  display: block;
+		  width: 1rem;
+		  height: 1rem;
+		  border-radius: 3.125rem;
+		  cursor: pointer;
+		  position: absolute;
+		  top: .3125rem;
+		  z-index: 1;
+		  left: .5rem;
+		  background-color: #FFFFFD;
+		  -webkit-transition: left .2s ease-in-out;
+		  transition: left .2s ease-in-out;
+	}
+	.z-checkbox:first-of-type input[type=checkbox]:checked ~ label {
+	  	background-color: #4fbe79;
+	}
+	.z-checkbox:first-of-type input[type=checkbox]:checked ~ label:after {
+	  	left: 3.125rem;
+	}

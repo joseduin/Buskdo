@@ -1,0 +1,29 @@
+<?page title="Recuperar Clave"?>
+<?link rel="icon" type="image/x-icon" href="/imagen/icono.png"?>
+
+<?link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:400,700,300" ?>
+<?link rel="stylesheet" type="text/css" href="../css/bootstrap/css/bootstrap.css" ?>
+<?link rel="stylesheet" type="text/css" href="../css/style.css" ?>
+
+<zk>
+	<script src="../css/bootstrap/js/bootstrap.js" /> 
+	<script src="../css/bootstrap/js/botton.js" />
+	<style src="../css/bootstrap/temas/tema3.css"/>
+	
+	<include src="/vista/cabecera.zul"/>			<!-- Cabecera -->
+
+ 	<div apply="controlador.ControladorRecuperarClave" align="center" zclass="contenedor">
+
+ 		<separator spacing="10px"/>
+ 		<label value="Ingrese su nueva clave" zclass="tituloAdmin lead"/>
+ 		<separator spacing="20px"/>
+ 		
+ 		<vbox>
+			<textbox id="txtClave" placeholder="Clave" type="password" zclass="txtAdmin" maxlength="20"/>
+			<textbox id="txtReClave" placeholder="Confirmar Clave" type="password" zclass="txtAdmin" maxlength="20"/>
+			<button id="aceptar" label="Aceptar" hflex="1" zclass="btn btn-success ao"/>
+		</vbox>
+ 		
+	</div>
+	<include src="/vista/pie_pagina.zul"/>			<!-- Pie de Pagina -->
+</zk>

@@ -1,0 +1,63 @@
+<?page title="Login"?>
+<?init class="controlador.AutentificarUsuarioIngresado"?>
+<?link rel="icon" type="image/x-icon" href="/imagen/icono.png"?>
+
+<?link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:400,700,300" ?>
+<?link rel="stylesheet" type="text/css" href="/css/bootstrap/css/bootstrap.css" ?>
+<?link rel="stylesheet" type="text/css" href="/css/style.css" ?>
+<?link rel="stylesheet" type="text/css" href="/css/window.css" ?>
+
+<zk>
+
+ <script src="/css/bootstrap/js/bootstrap.js" /> 
+ <script src="/css/bootstrap/js/botton.js" />
+ 
+ <include src="/vista/cabecera.zul"/>			<!-- Cabecera -->
+
+ <div apply="controlador.ControladorLogin" align="center" zclass="contenedor">
+
+ 	<separator spacing="30px"/>
+ 	<vbox spacing="0">
+ 	
+<!-- INICIAR SESION -->
+ 	<div id="iniciarSecion" zclass="btn-group-vertical">
+ 		<div zclass="fondo-belice text-center ">
+ 			<label value="Iniciar Sesión" zclass="cartel-letra nube"/>
+ 		</div>
+       	<vbox hflex="min" align="center" sclass="caja fondo-zanahoria">
+       		<separator spacing="5px"/>
+			<div class="input-group">
+				<span class="input-group-addon glyphicon glyphicon-user"/>
+				<textbox id="lblLogin" zclass="form-control input-lg" placeholder="Usuario" />
+			</div>
+			<div class="input-group">
+				<span class="input-group-addon glyphicon glyphicon-lock"/>
+				<textbox id="lblPassword" zclass="form-control input-lg" placeholder="Clave" type="password" />
+			</div>
+			<button id="btnAceptar" label="Entrar" zclass="btnlogin btn btn-danger" hflex="1"/>
+			<label id="recuperarClave" value="¿Olvido la clave?"  zclass="btn btn-link" style="color: black"/>
+		</vbox>		
+	</div>
+		
+<!-- REGISTRAR USUARIO -->
+	<div id="registrarUsuario" zclass="btn-group-vertical" visible="false">
+		<div zclass="fondo-asbalto-oscuro text-center">
+			<label value="Registrar" zclass="cartel-letra nube"/>
+		</div>
+ 	   	<vbox hflex="min" align="center" sclass="caja fondo-amatista">
+ 	   		<separator spacing="5px"/>
+			<textbox id="txtUsuario" zclass="form-control input-lg" placeholder="Nombre de Usuario" maxlength="20"/>
+			<textbox id="txtClave" zclass="form-control input-lg" placeholder="Clave" type="password" maxlength="20"/>
+			<textbox id="txtReClave" zclass="form-control input-lg" placeholder="Confirmar Clave" type="password" maxlength="20"/>
+			<button id="btnRegistrar" label="Registrar" zclass="btnlogin btn btn-primary"/>
+			<separator spacing="5px"/>
+		</vbox>
+	</div>
+ 	   	
+	</vbox>
+	<button id="btnInicioRegistro" label="Nuevo Usuario" zclass="anima hexagono btn btn-info"/>
+	
+<div zclass="limpiar"/>
+</div>
+<include src="/vista/pie_pagina.zul"/>			<!-- Pie de Pagina -->
+</zk>

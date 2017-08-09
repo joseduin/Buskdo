@@ -1,0 +1,28 @@
+<zk>
+	<div align="center" apply="controlador.ControladorConvertidor">
+		<separator spacing="10px"/>
+	 	<label value="Dolar - Otras" zclass="tituloAdmin lead"/>
+	 	<separator spacing="20px"/>
+	
+		<listbox id="listaConvertidor" width="90%">
+			<listhead menupopup="auto">
+				<listheader label="PAIS" align="center"/>
+				<listheader label="MONEDA" align="center"/>
+				<listheader label="VALOR" align="center"/>
+			</listhead>
+			<template name="model">
+				<listitem>
+					<listcell><label value="${each.pais}" /></listcell>
+					<listcell><textbox value="${each.moneda}" maxlength="3"/></listcell>
+					<listcell><doublebox value="${each.valor}"/></listcell>
+				</listitem>	
+				</template>
+			</listbox>
+			<separator spacing="10px"/>
+		<hbox>
+			<button label="Guardar" id="guardarLista" zclass="btn btn-success ao"/>
+			<button label="Cancelar" id="calcelarLista" zclass="btn btn-danger ao"/>
+		</hbox>
+	</div>
+	<separator spacing="30px"/>
+</zk>

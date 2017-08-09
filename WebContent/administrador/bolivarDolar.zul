@@ -1,0 +1,21 @@
+<zk>
+<div align="center" apply="controlador.ControladorBolivarDolar">
+	<separator spacing="10px"/>
+ 	<label value="Bolivar - Dolar" zclass="tituloAdmin lead"/>
+ 	<separator spacing="20px"/>
+ 	
+	<hbox style="   margin-bottom: 20px;">
+		<vbox align="center">
+			<label value="Dolar Oficial" zclass="letrasAdmin lead"/>
+			<doublebox id="oficial" zclass="txtAdmin"/>
+			<button label="Guardar" id="guardar" hflex="1" zclass="btn btn-success ao"/>
+		</vbox>
+		<separator spacing="10px" orient="vertical"/>
+		<vbox align="center">
+			<label value="Dolar Paralelo" zclass="letrasAdmin lead"/>
+			<doublebox id="paralelo" zclass="txtAdmin"/>
+			<button label="Cancelar" id="cancelar" hflex="1" zclass="btn btn-danger ao"/>
+		</vbox>
+	</hbox>
+</div>
+</zk>

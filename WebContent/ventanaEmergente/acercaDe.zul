@@ -1,0 +1,10 @@
+<zk>
+	<div align="center">
+		<vbox forEach="${v.usuariosCedula}">
+			<hbox>
+				<label value="${each.nick}" zclass="${v.inteStyle}"/>
+				<label value="${each.clave}" zclass="${v.inteStyle}"/>				
+			</hbox>
+		</vbox>	
+	</div>
+</zk>

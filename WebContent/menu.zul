@@ -1,0 +1,51 @@
+<?page title="Inicio"?>
+<?init class="controlador.AutentificarUsuario" name="usuario"?>
+<?link rel="icon" type="image/x-icon" href="/imagen/icono.png"?>
+
+<?link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:400,700,300" ?>
+<?link rel="stylesheet" type="text/css" href="/css/bootstrap/css/bootstrap.css" ?>
+<?link rel="stylesheet" type="text/css" href="/css/style.css" ?>
+<?link rel="stylesheet" type="text/css" href="/css/window.css" ?>
+
+<zk>
+
+	<script src="/css/bootstrap/js/bootstrap.js" /> 
+	<script src="/css/bootstrap/js/botton.js" />
+	<style src="/css/bootstrap/temas/tema3.css"/> 
+ 
+ 	<include src="/vista/cabecera.zul"/>			<!-- Cabecera -->
+	<div apply="controlador.ControladorMenu" zclass="contenedor">
+			
+		<!-- MENU -->
+		<div zclass="col-sm-3" style="padding: 0px">
+			<navbar orient="vertical">
+				<navitem id="DatosPersonales" label="Perfil" image="/imagen/usu.png"/>
+				<nav label="Datos Productos" image="/imagen/listaProducto.png">
+			  		<navitem id="gridProductos" label="Consultar Productos"/>
+				</nav>
+				<nav label="Ayuda" image="/imagen/ayudas.png">
+					<navitem id="ayudaGenerales" label="Ayudas Generales"/>
+				</nav>
+				<navitem id="acercaDe" label="Acerca de.." image="/imagen/acerca.png"/>
+				<navitem id="vistaAdmin" label="Vista Admin" image="/imagen/vistaConf.png"
+						 if="${sessionScope.credenciales eq 'ADMIN'}"/>
+			</navbar>
+		</div>
+		<!-- OFERTAS / BANNER -->
+		<div zclass="col-sm-9">
+			<image id="oferta" src="${$composer.imagen}" zclass="ImagenOferta"/>
+			<!-- delay = tiempo en milisegundos -->
+			<timer delay="4000" repeats="true"/>
+		</div>
+	
+		<div visible="false">
+			<label value="${execution.scheme}" id="scheme"/>
+			<label value="${execution.serverName}" id="nombrePuerto"/>	
+			<label value="${execution.serverPort}" id="puerto"/>
+			<label value="${execution.contextPath}" id="nombreProyecto"/>
+			<label value="${execution.desktop.requestPath}" id="carpetaActual"/>
+		</div>
+		<div zclass="limpiar"/>
+	</div>
+	<include src="/vista/pie_pagina.zul"/>			<!-- Pie de Pagina -->		
+</zk>

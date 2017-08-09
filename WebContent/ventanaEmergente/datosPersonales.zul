@@ -1,0 +1,58 @@
+<zk>
+<style>
+	.z-listheader-button{
+		color: transparent;
+		display:none;
+		width:0;
+		height:32px;
+		border-left:0 solid #abd8f9;
+		line-height:32px;
+		text-align:center;
+		position:absolute;
+		top:0;right:0;
+		text-decoration:none;
+		cursor:pointer;
+		z-index:15;	 
+		-webkit-box-shadow:	 inset 1px 0 #FFFFFF;
+		box-shadow:	inset 1px 0 #FFFFFF;
+	}
+	.z-listitem .z-listcell {
+		border-left:0 solid transparent;	/*separacion de columnas*/
+		border-right:0 solid transparent;	/*separacion de columnas*/
+		overflow:hidden;
+		cursor: pointer
+	}
+	.z-listitem:hover>.z-listcell {	
+		background:	transparent; /*hover en las filas*/
+		background-clip:padding-box;
+		position:relative
+	}	
+</style>
+
+	<div align="center" apply="controlador.ControladorDatosPersonales" zclass="container-fluid">	
+	
+		<listbox style="border: none;">
+			<listitem>
+				<listcell><label value="Usuario" zclass="${v.inteStyle}"/></listcell>
+				<listcell><label id="nick" zclass="${v.nombreStyle}" style="text-transform: capitalize"/></listcell>
+			</listitem>
+			<listitem style="background: transparent;">
+				<listcell><label id="lblClave" zclass="${v.inteStyle}"/></listcell>
+				<listcell>
+					<label id="lblPassword" value="${v.claveEncriptada}" zclass="${v.nombreStyle}"/>
+					<textbox id="password" type="password"/>
+				</listcell>
+			</listitem>
+			<listitem>
+				<listcell><label id="lblRePassword" zclass="${v.inteStyle}"/></listcell>
+				<listcell><textbox id="rePassword" type="password"/></listcell>
+			</listitem>
+		</listbox>	
+	
+		<separator spacing="20px"/>
+		<button id="btnEditar"/>
+		<button id="btnGuardar"/>
+		<button id="btnCancelar"/>
+		<button id="btnEliminar"/>
+	</div>
+</zk>
